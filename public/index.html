@@ -6,23 +6,30 @@
     <script src="./js/bundle.js"></script>
 </head>
 <body>
+    <div id="app">
 
     <form v-on:submit.prevent="saveNewToDo">
+        <!-- input and submit buttom -->
         <label for="new-todo">Add Todo</label>
-        <input id="new-item" type="text">
-        <input type="submit">
+        <input id="new-todo" type="text" v-model="newToDo">
+        <input type="submit" value="Save ToDo">
+        <!-- high priority radial button -->
         <label for="high">High</label>
-        <input type="radio" name="priority" value="high" id="high">
+        <input type="radio" name="priority" value="high" id="high" v-model="picked">
+        <!-- low priority radial button -->
         <label for="low">Low</label>
-        <input type="radio" name="priority" value="low" id="low">
+        <input type="radio" name="priority" value="low" id="low" v-model="picked">
     </form>
 
-    <div id="app">
+    
     <ul>
-        <li v-for="todo in todos">
+        <!-- display each todo -->
+        <li v-for="(todo, index) in todos">
             <span>{{todo.name}}</span>
         </li>
     </ul>
+
+  
 
 
 </div>
