@@ -3,29 +3,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
     <script src="./js/bundle.js"></script>
 </head>
 <body>
     <div id="app">
 
     <form v-on:submit.prevent="saveNewToDo">
-        <!-- input and submit buttom -->
+        <!-- input  -->
         <label for="new-todo">Add Todo</label>
         <input id="new-todo" type="text" v-model="newToDo">
-        <input type="submit" value="Save ToDo">
         <!-- high priority radial button -->
         <label for="high">High</label>
         <input type="radio" name="priority" value="high" id="high" v-model="picked">
         <!-- low priority radial button -->
         <label for="low">Low</label>
         <input type="radio" name="priority" value="low" id="low" v-model="picked">
+         <!-- submit buttom -->
+        <input type="submit" value="Save ToDo">
     </form>
 
     
     <ul>
         <!-- display each todo -->
         <li v-for="(todo, index) in todos">
-            <span>{{todo.name}}</span>
+            <span class="priority" :class="todo.priority" >{{todo.name}}</span>
+            <span class="priority" :class="todo.priority">{{todo.priority}}</span>
+            
         </li>
     </ul>
 
