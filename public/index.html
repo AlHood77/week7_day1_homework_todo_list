@@ -26,9 +26,11 @@
     
     <ul>
         <!-- display each todo -->
-        <li v-for="(todo, index) in todos">
+        <li v-for="(todo, index) in todos" v-bind:class="todo.status ? 'done' : 'not-done'">
             <span class="priority" :class="todo.priority" >{{todo.name}}</span>
             <span class="priority" :class="todo.priority">{{todo.priority}}</span>
+            <span v-if="todo.status">ToDo Complete!</span>
+            <button v-if="!todo.status" v-on:click="taskComplete(index)">Tap when Done</button>
             
         </li>
     </ul>

@@ -5,9 +5,9 @@ new Vue({
     el: "#app",
     data: {
         todos: [
-            {name: "Shopping", priority: "low"}, 
-            {name: "Coding Tutorial", priority: "low"}, 
-            {name: "Fill Up Car", priority: "high"}
+            {name: "Shopping", priority: "low", status: false}, 
+            {name: "Coding Tutorial", priority: "low", status: false}, 
+            {name: "Fill Up Car", priority: "high", status: false}
         ],
         newToDo: ""
     },
@@ -15,9 +15,14 @@ new Vue({
         saveNewToDo: function (){
             this.todos.push({
                 name: this.newToDo,
-                priority: this.picked
+                priority: this.picked,
+                status: false
             });
             this.newToDo = "";
+        },
+
+        taskComplete: function(index){
+            this.todos[index].status = true;
         }
 
     }
