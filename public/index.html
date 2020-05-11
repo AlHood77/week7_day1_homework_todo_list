@@ -4,36 +4,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <script src="./js/bundle.js"></script>
 </head>
 <body>
     <div id="app">
 
-    <form v-on:submit.prevent="saveNewToDo">
+    <form class="form" v-on:submit.prevent="saveNewToDo">
         <!-- input  -->
         <label for="new-todo">Add Todo</label>
         <input id="new-todo" type="text" v-model="newToDo">
         <!-- high priority radial button -->
-        <label for="high">High</label>
+        <label for="high">Must Do</label>
         <input type="radio" name="priority" value="high" id="high" v-model="picked">
         <!-- low priority radial button -->
-        <label for="low">Low</label>
+        <label for="low">Should Do</label>
         <input type="radio" name="priority" value="low" id="low" v-model="picked">
          <!-- submit buttom -->
         <input type="submit" value="Save ToDo">
     </form>
 
     
-    <ul>
+    <div class="lines">
+    <ul class="list">
+        
+
         <!-- display each todo -->
         <li v-for="(todo, index) in todos" v-bind:class="todo.status ? 'done' : 'not-done'">
             <span class="priority" :class="todo.priority" >{{todo.name}}</span>
-            <span class="priority" :class="todo.priority">{{todo.priority}}</span>
-            <span v-if="todo.status">ToDo Complete!</span>
+            <span class="priority" :class="todo.priority"></span>
+            <span v-if="todo.status">Complete!</span>
             <button v-if="!todo.status" v-on:click="taskComplete(index)">Tap when Done</button>
             
         </li>
+    
     </ul>
+</div>
 
   
 

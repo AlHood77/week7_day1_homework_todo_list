@@ -1,3 +1,63 @@
+
+body {
+    /* background-color: #fff; */
+    background-image: url(/Users/alanhood/codeclan_work/week07/day1/4_homework_todos/todo_startpoint/images/Capture0015.png);
+    width: 600px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 600px;
+      margin-top: 300px;
+
+  }
+
+  .list {
+    color: #555;
+    font-size: 22px;
+    padding: 0 !important;
+    width: 600px;
+    font-family: 'Patrick Hand', cursive;
+    border: 1px solid #dedede;
+  }
+
+  .list li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    list-style: none;
+    border-bottom: 1px dotted #ccc;
+    text-indent: 25px;
+    height: auto;
+    padding: 10px;
+    text-transform: capitalize;
+    background-color:#f5f5f5;
+  }
+
+  .list li:hover {
+    background-color: #f0f0f0;
+    -webkit-transition: all 0.2s;
+    -moz-transition:    all 0.2s;
+    -ms-transition:     all 0.2s;
+    -o-transition:      all 0.2s;
+  }
+
+
+
+  .lines {
+    border-left: 2px solid #ffaa9f;
+    border-right: 2px solid #ffaa9f;
+    width: 2px;
+    /* float: left; */
+    height: auto;
+    margin-left: 40px;
+    
+  }
+
 .priority.high {
     color: red;
 }
