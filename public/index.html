@@ -12,16 +12,16 @@
 
     <form class="form" v-on:submit.prevent="saveNewToDo">
         <!-- input  -->
-        <label for="new-todo">Add Todo</label>
-        <input id="new-todo" type="text" v-model="newToDo">
+        <label class="label" for="new-todo"></label>
+        <input id="new-todo" type="text" v-model="newToDo" placeholder="Add ToDo">
         <!-- high priority radial button -->
-        <label for="high">Must Do</label>
+        <label class="label-high" for="high">Must Do</label>
         <input type="radio" name="priority" value="high" id="high" v-model="picked">
         <!-- low priority radial button -->
-        <label for="low">Should Do</label>
+        <label class="label-low" for="low">Should Do</label>
         <input type="radio" name="priority" value="low" id="low" v-model="picked">
          <!-- submit buttom -->
-        <input type="submit" value="Save ToDo">
+        <input class="save-btn" type="submit" value="Save ToDo">
     </form>
 
     
@@ -34,7 +34,7 @@
             <span class="priority" :class="todo.priority" >{{todo.name}}</span>
             <span class="priority" :class="todo.priority"></span>
             <span v-if="todo.status">Complete!</span>
-            <button v-if="!todo.status" v-on:click="taskComplete(index)">Tap when Done</button>
+            <button class="done-btn" v-if="!todo.status" v-on:click="taskComplete(index)">Tap when Done</button>
             
         </li>
     

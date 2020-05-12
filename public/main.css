@@ -1,19 +1,39 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     /* background-color: #fff; */
-    background-image: url(/Users/alanhood/codeclan_work/week07/day1/4_homework_todos/todo_startpoint/images/Capture0015.png);
+    background-image: url(/Users/alanhood/codeclan_work/week07/day1/homework_todos/todo_startpoint/images/Capture0015.png);
     width: 600px;
     margin: 0 auto;
     padding: 0;
   }
 
+
+
   .form {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-evenly;
       width: 600px;
       margin-top: 300px;
+      margin-left: 42px;
+      background-color:#FEF89F;
+      padding: 10px;
+      border: 1px solid #dedede;
+      -webkit-box-shadow: -1px -6px 10px -3px rgba(0,0,0,0.75);
+      -moz-box-shadow: -1px -6px 10px -3px rgba(0,0,0,0.75);
+      box-shadow: -1px -6px 10px -3px rgba(0,0,0,0.75);
+      
 
+  }
+
+  .label {
+    font-family: 'Patrick Hand', cursive;
   }
 
   .list {
@@ -23,6 +43,7 @@ body {
     width: 600px;
     font-family: 'Patrick Hand', cursive;
     border: 1px solid #dedede;
+    
   }
 
   .list li {
@@ -35,7 +56,8 @@ body {
     height: auto;
     padding: 10px;
     text-transform: capitalize;
-    background-color:#f5f5f5;
+    background-color:#FEF89F;
+   
   }
 
   .list li:hover {
@@ -49,8 +71,8 @@ body {
 
 
   .lines {
-    border-left: 2px solid #ffaa9f;
-    border-right: 2px solid #ffaa9f;
+    border-left: 3px solid #ffaa9f;
+    border-right: 3px solid #ffaa9f;
     width: 2px;
     /* float: left; */
     height: auto;
@@ -60,8 +82,67 @@ body {
 
 .priority.high {
     color: red;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .priority.low {
     color: orange;
+    font-weight: bold;
+    font-style: italic;
 }
+
+.done-btn {
+    background-color: transparent;
+    font-family: 'Patrick Hand', cursive;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background-color: #F071B1;
+    font-family: 'Patrick Hand', cursive;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#new-todo {
+    width: 300px;
+    font-size: 20px;
+    font-family: 'Patrick Hand', cursive;
+    font-style: italic;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px groove #555;
+}
+
+
+
+span {
+    color: green;
+}
+
+.label-high {
+  color: red;
+  font-family: 'Patrick Hand', cursive;
+  font-style: italic;
+}
+
+.label-low {
+  color: orange;
+  font-family: 'Patrick Hand', cursive;
+  font-style: italic;
+}
+
+#high {
+  cursor: pointer;
+}
+
+#low {
+  cursor: pointer;
+}
+
